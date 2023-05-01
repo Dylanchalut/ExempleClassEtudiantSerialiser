@@ -1,0 +1,1 @@
+{"py/object": "__main__.Etudiant", "nom": "Dylan", "Local": [{"py/object": "__main__.Local", "numero_local": 100, "type_local": "Technique"}, {"py/object": "__main__.Local", "numero_local": 200, "type_local": "Normal"}]}
