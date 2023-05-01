@@ -3,12 +3,17 @@ import json
 class Local:
     def __init__(self):
         self.numero_local = "0"
-        self.type_local = ""
+        self.type_local = "X"
 
+    def valider_technique(self):
+        if self.type_local == "technique":
+            return True
+        else:
+            return False
 
 
 class Etudiant:
-    def __init__(self, p_nom : str="", p_ls_locaux : Local = []):
+    def __init__(self, p_nom : str="XXX", p_ls_locaux : Local = []):
         self.nom = p_nom
         self.Local = p_ls_locaux
 
@@ -33,7 +38,6 @@ except:
     print("Erreur écriture")
 
 
-
 # Json string
 import jsonpickle
 
@@ -42,13 +46,16 @@ print(Json_string)
 
 #Serialisation à un fichier json
 
-with open("test.json", "w") as F:
+with open("./"+"Local_"+E.nom+".json", "w") as F:
     F.write(Json_string)
 
 #Deserialisation à partir du fichier json
 
-with open("test.json", "r") as F:
+with open("./"+"Local_"+E.nom+ ".json", "r") as F:
     Json_string1 = F.readline()
+print(Json_string1)
 
 E2 = jsonpickle.decode(Json_string1)
 print(E2.nom, E2.Local[0].numero_local)
+
+
